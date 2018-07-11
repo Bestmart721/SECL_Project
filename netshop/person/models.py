@@ -4,9 +4,11 @@ from django.db import models
 
 # Create your models here.
 class Person(models.Model):
+    MALE = 0
+    FEMALE = 1
     GENDER_CHOICES = (
-        ('male', u'мужской'),#зліва, те що зберігається в бд, зправа хтмл
-        ('female', u'женский'),
+        (MALE, u'мужской'),#зліва, те що зберігається в бд, зправа хтмл
+        (FEMALE, u'женский'),
     )
     first_name = models.CharField(max_length=48, verbose_name=u'имя')
     last_name = models.CharField(max_length=58, verbose_name=u'фамилия')
