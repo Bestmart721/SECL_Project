@@ -27,5 +27,5 @@ class Shop(models.Model):
         verbose_name_plural = u'магазины'
 
     def __unicode__(self):
-        return u'Магазин {} - {}, владелец: {}'.format(self.name, self.type_of_shop, self.owner or self.seller)
+        return u'Магазин {}'.format(self.name)
 
