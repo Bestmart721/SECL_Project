@@ -1,0 +1,192 @@
+/*body {*/
+	/*background-color: blue;*/
+
+/*
+table.table {
+	width: 120%
+}*/
+
+/*table.table {
+	text-align: center;
+}*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 170px;
+  background-color: #e7e7e726;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 170px;
+  background-color:  #e7e7e761;
+  border-top: 2px solid #ddd;
+}
+
+.panel-body>a {
+	text-decoration: none;
+	color: white;
+}
+
+/*base.html*/
+
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+	padding: 1% 0;
+	font-size: 1.2em;
+}
+   
+
+.navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .active a:focus, .navbar-default .navbar-nav .active a:hover{
+	color: #333232;
+	background-color: #F8F8F8;
+}
+
+.carousel-caption {
+	top: 50%;
+	transform: translateY(-50%);
+	text-transform: uppercase;
+}
+
+.btn-default{
+	font-size: 18px;
+	color: white;
+	padding: 12px 22px;
+	background-color: #1a0d00;
+
+}
+
+.btn-default:hover{
+	background-color: #C2B718;
+}
+
+@media (max-width: 600px) {
+	.carousel-caption {
+		display: none;
+	}
+}
+
+
+nav div.container-fluid div.navbar-header a:hover{
+	color: #06a1ea;
+}
+
+nav div.collapse.navbar-collapse a:hover{
+	color: #06a1ea;
+}
+
+nav div.container-fluid div.navbar-header li.active a:hover{
+	color: #06a1ea;
+}
+
+nav ul li a:hover{
+	text-decoration: none;
+    color: #06a1ea;
+}
+
+.panel-primary {
+	border: 3px groove grey;
+	border-radius: 25px;
+	background-color: #e7e7e773;
+}
+
+.panel-primary>.panel-heading {
+	background-color: #0CA821;
+	border-radius: 25px;
+
+}
+
+.panel-primary>.panel-heading:hover {
+	background-color: #0F9CA0;
+}
+
+
+footer div.col-sm-6 ul li a{
+	color: black;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 16px;
+}
+
+footer div.col-sm-6 ul li a:hover{
+	text-decoration: none;
+    color: #0f9de4;
+}
+
+footer div.col-sm-6 ul li{
+	list-style-type: none;
+}
+
+/*footer social media*/
+footer div.col-sm-6.text-right ul li a{
+	width: 50px;
+	height: 50px;
+	background: #fff;
+	text-align: center;
+	line-height: 46px;
+	float: right;
+	font-size: 31px;
+	margin: 0 10px;
+	display: block;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+	border: 3px solid #fff;
+	z-index: 1;
+}
+
+footer div.col-sm-6.text-right ul li a .fa{
+	position: relative;
+	color: #262626;
+	transition: .5s;
+}
+
+footer div.col-sm-6.text-right ul li a:hover .fa{
+	color: #fff;
+	transform: rotateY(360deg);
+}
+
+footer div.col-sm-6.text-right ul li a:before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #f00;
+	transition: .5s;
+	z-index: 1;
+}
+
+footer div.col-sm-6.text-right ul li a:hover:before {
+	top: 0;
+}
+
+footer div.col-sm-6.text-right ul li:nth-child(1) a:before {
+	background: #3b5999;
+}
+footer div.col-sm-6.text-right ul li:nth-child(2) a:before {
+	background: #55acee;
+}
+footer div.col-sm-6.text-right ul li:nth-child(3) a:before {
+	background: #0077b5;
+}
+footer div.col-sm-6.text-right ul li:nth-child(4) a:before {
+	background: #cd201f;
+}
+footer div.col-sm-6.text-right ul li:nth-child(5) a:before {
+	background: #131418;
+}
+
+
+/*added styles in such way in order to give each color to each*/
+

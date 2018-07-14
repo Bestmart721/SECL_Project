@@ -1,18 +1,15 @@
 # coding=utf-8
-
 from django.db import models
 
-# class CustomManager(models.Manager):
-#     def get_queryset(self):
-#         return super(CustomManager, self).get_queryset().filter(gender=Person.FEMALE)
-#
 
-# Create your models here.
 class Person(models.Model):
+    """The model of person
+    special: choices of gender
+    additional methodes fullname and description"""
     MALE = 0
     FEMALE = 1
     GENDER_CHOICES = (
-        (MALE, u'мужской'),#зліва, те що зберігається в бд, зправа хтмл
+        (MALE, u'мужской'),
         (FEMALE, u'женский'),
     )
     first_name = models.CharField(max_length=48, verbose_name=u'имя')
@@ -21,12 +18,15 @@ class Person(models.Model):
     date_of_birth = models.DateField(auto_now=False, auto_now_add=False, verbose_name=u'дата рождения')
     email = models.EmailField(max_length=254, unique=True, verbose_name=u'электронный адрес')
 
-    # males = CustomManager()
-    # object = models.Manager()
-
     class Meta:
         verbose_name = u'контактное лицо'
         verbose_name_plural = u'контактние лица'
 
     def __unicode__(self):
         return u'{} {}'.format(self.first_name, self.last_name)
+
+    def fullname(self):
+        return self.first_name + ' ' + self.last_name
+
+    def description(self):
+        return u'{} - пол: {}, дата рождения: {}, электронный адрес: {}'.format(self.fullname(), self.get_gender_display(), self.date_of_birth, self.email)

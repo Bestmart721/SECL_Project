@@ -1,8 +1,6 @@
 # coding=utf-8
-
 from django.db import models
 
-# Create your models here.
 class TypeShop(models.Model):
     name = models.CharField(max_length=50, verbose_name=u'тип магазина')
 
@@ -11,7 +9,7 @@ class TypeShop(models.Model):
         verbose_name_plural = u'типы магазинов'
 
     def __unicode__(self):
-        return u'Тип магазина: {}'.format(self.name)
+        return u'тип магазина: {}'.format(self.name)
 
 class Shop(models.Model):
     type_of_shop = models.ForeignKey('TypeShop', verbose_name=u'тип магазина')
@@ -29,3 +27,5 @@ class Shop(models.Model):
     def __unicode__(self):
         return u'Магазин {}'.format(self.name)
 
+    def description(self):
+        return u'{} расположен в {}, {}'.format(self.name, self.city, self.type_of_shop)

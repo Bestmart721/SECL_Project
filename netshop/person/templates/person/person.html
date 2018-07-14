@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Person List{{ person.pk }}{% endblock %}
+
+{% block content %}
+
+    <br>
+
+    <div class="container text-left">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h4>List of persons</h4></div>
+                    {% for per in person %}
+                    <div class="panel-body"><a class="btn btn-success" href="{% url 'person_detail' per.id %}">{{ per.fullname }}</a></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

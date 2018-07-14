@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Shop detail {{ shop.pk }}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h3>City detail</h3>
+        <p>{{ shop.description }}</p>
+        <a class="btn btn-success" href="{% url 'shop' %}">&larr; Return back to the city</a>
+		<br>
+		<br>
+    </div>
+
+
+{% endblock %}

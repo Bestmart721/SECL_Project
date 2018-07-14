@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Stock detail {{ stock.pk }}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h3>Stock details</h3>
+        <p>{{ stock.description }}</p>
+        <p>{{ stock.get_address }}</p>
+        <a class="btn btn-success" href="{% url 'stock' %}">&larr; Return stock</a>
+		<br>
+		<br>
+    </div>
+
+
+{% endblock %}

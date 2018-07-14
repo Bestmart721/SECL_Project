@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail person {{ person.pk }}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h3>Person details</h3>
+        <p>{{ person.description }}</p>
+        <a class="btn btn-success" href="{% url 'person' %}">&larr; Return List</a>
+		<br>
+		<br>
+    </div>
+
+
+
+{% endblock %}

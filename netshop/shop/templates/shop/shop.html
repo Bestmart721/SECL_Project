@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Shop List{% endblock %}
+
+{% block content %}
+
+    <br>
+
+    <div class="container text-left">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                <div class="panel-heading"><h4>Shop list</h4></div>
+                {% for s in shop %}
+                    <div class="panel-body"><a class="btn btn-success" href="{% url 'shop_detail' s.id %}">{{ s }}</a></div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
