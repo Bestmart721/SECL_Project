@@ -18,3 +18,7 @@ class Stock(models.Model):
 
     def get_address(self):
         return u'адрес: {}'.format(self.adress)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'shop_detail', (), {'pk': self.pk}

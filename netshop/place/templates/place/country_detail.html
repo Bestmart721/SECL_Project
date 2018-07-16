@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container-fluid">
+        <h3>Country details</h3>
+        <p>{{ object }}</p>
+        <a class="btn btn-info" href="{% url 'country_list' %}">&larr; Return country</a>
+        <a class="btn btn-warning" href="/country/1/edit">Country edit</a>
+        <a class="btn btn-danger" href="/country/add">Country add</a>
+		<br>
+		<br>
+    </div>
+
+
+{% endblock %}
