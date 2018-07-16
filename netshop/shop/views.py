@@ -30,11 +30,12 @@ class ShopCreateView(CreateView):
     model = Shop
     fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
 
-# class CustomShopCreateView(TemplateView):
-#     template_name = 'shop/shop_form.html'
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(CustomShopCreateView, self).get_context_data(**kwargs)
-#         context['object'] = get_object_or_404(Shop, pk=1)
-#         return context
+class CustomShopCreateView(TemplateView):
+    template_name = 'shop/shop_form.html'
+
+    def get_context_data(self, **kwargs):
+        fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
+        context = super(CustomShopCreateView, self).get_context_data(**kwargs)
+        context['object'] = get_object_or_404(Shop, pk=1)
+        return context
 

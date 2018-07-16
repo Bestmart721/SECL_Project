@@ -8,11 +8,49 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 170px;
-  background-color: #e7e7e726;
+  /*background-color: #e7e7e726;*/
+	padding:0;
+	/*font-family:"arial",heletica,sans-serif;*/
+	/*font-size:12px;*/
+    background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+	-webkit-animation: 10s linear 0s normal none infinite animate;
+	-moz-animation: 10s linear 0s normal none infinite animate;
+	-ms-animation: 10s linear 0s normal none infinite animate;
+	-o-animation: 10s linear 0s normal none infinite animate;
+	animation: 10s linear 0s normal none infinite animate;
+
 }
+
+@-webkit-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@-moz-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@-ms-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@-o-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+@keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+
+
+
 .footer {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 170px;
@@ -33,7 +71,7 @@ body {
 	padding: 1% 0;
 	font-size: 1.2em;
 }
-   
+
 
 .navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .active a:focus, .navbar-default .navbar-nav .active a:hover{
 	color: #333232;
