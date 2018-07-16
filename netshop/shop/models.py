@@ -29,3 +29,7 @@ class Shop(models.Model):
 
     def description(self):
         return u'{} расположен в {}, {}'.format(self.name, self.city, self.type_of_shop)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'shop_detail', (), {'pk': self.pk}

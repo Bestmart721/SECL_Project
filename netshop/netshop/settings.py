@@ -51,6 +51,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'netshop.middleware.MyMiddleware',
 ]
 
 ROOT_URLCONF = 'netshop.urls'
@@ -67,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'netshop.context_processors.netshop',
             ],
         },
     },
@@ -130,4 +132,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')# in order to give django possib to see staic files
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mysite/media')#string that gives django possib to see media files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'netshop/media')#string that gives django possib to see media files
