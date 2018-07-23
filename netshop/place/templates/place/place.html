@@ -12,7 +12,7 @@
                 <div class="panel panel-primary">
                         <div class="panel-heading"><h4>List of cities</h4></div>
                          {% for c in city %}
-                        <div class="panel-body"><a class="btn btn-success" href="{% url 'place_detail' c.id %}">{{ c }}</a></div>
+                        <div class="panel-body"><a class="btn btn-success" href="{% url 'place_detail' c.id %}">{{ c }}</a></a>&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px;" class="btn btn-warning" href="{% url 'place_edit' c.id %}">City edit</a></div>
                         {% endfor %}
                 </div>
             </div>

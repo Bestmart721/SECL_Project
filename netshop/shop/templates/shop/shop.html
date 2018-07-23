@@ -12,7 +12,7 @@
                 <div class="panel panel-primary">
                 <div class="panel-heading"><h4>Shop list</h4></div>
                 {% for s in shop %}
-                    <div class="panel-body"><a class="btn btn-success" href="{% url 'shop_detail' s.id %}">{{ s }}</a></div>
+                    <div class="panel-body"><a class="btn btn-success" href="{% url 'shop_detail' s.id %}">{{ s }}</a></a>&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px;" class="btn btn-warning" href="{% url 'shop_edit' s.id %}">Shop edit</a></div>
                 {% endfor %}
                 </div>
             </div>

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Shop detail {{ shop.pk }}{% endblock %}
+{% block title %}Type detail {{ type.pk }}{% endblock %}
 
 {% block content %}
 
@@ -10,21 +10,23 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                    <div class="panel-heading"><h3>Shop details</h3></div>
+                    <div class="panel-heading"><h3>Type details</h3></div>
                         <div class="panel-body">
                             <div class="col-sm-4">
-                                <h4><b>{{ shop.description }}</b></h4>
+                                <h4><b>{{ type }}</b></h4>
                             </div>
                             <div class="col-sm-4">
-                                <a class="btn btn-info" href="{% url 'shop' %}">&larr; Return shop</a>
-                                <a class="btn btn-warning" href="{% url 'shop_edit' shop.id %}">Shop edit</a>
-                                <a class="btn btn-danger" href="{% url 'shop_add' %}">Shop add</a>
+                                <a class="btn btn-info" href="{% url 'type' %}">&larr; Return type</a>
+                                <a class="btn btn-warning" href="{% url 'type_edit' type.id %}">Type edit</a>
+                                <a class="btn btn-danger" href="{% url 'type_add' %}">Type add</a>
                             </div>
                         </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 
 
 {% endblock %}

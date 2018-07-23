@@ -18,10 +18,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/admin">Django-admin</a></li>
-        <li><a href="/person">Person</a></li>
-        <li><a href="/place">Place</a></li>
-        <li><a href="/shop">Shop</a></li>
-        <li><a href="/stock">Stock</a></li>
+        <li><a href="{% url 'person' %}">Person</a></li>
+        <li><a href="{% url 'place' %}">City</a></li>
+          <li><a href="{% url 'country_list' %}">Country</a></li>
+        <li><a href="{% url 'shop' %}">Shop</a></li>
+          <li><a href="{% url 'type' %}">Type of shop</a></li>
+        <li><a href="{% url 'stock' %}">Stock</a></li>
       </ul>
     <!--Navbar right-->
       <ul class="nav navbar-nav navbar-right">

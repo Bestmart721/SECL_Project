@@ -3,15 +3,26 @@
 
 {% block content %}
 
-    <div class="container-fluid">
-        <h3>Country details</h3>
-        <p>{{ object }}</p>
-        <a class="btn btn-info" href="{% url 'country_list' %}">&larr; Return country</a>
-        <a class="btn btn-warning" href="/country/1/edit">Country edit</a>
-        <a class="btn btn-danger" href="/country/add">Country add</a>
-		<br>
-		<br>
-    </div>
+        <br>
 
+    <div class="container text-left">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h3>Country details</h3></div>
+                        <div class="panel-body">
+                            <div class="col-sm-4">
+                                <h4><b>{{ object }}</b></h4>
+                            </div>
+                            <div class="col-sm-4">
+                                <a class="btn btn-info" href="{% url 'country_list' %}">&larr; Return country</a>
+                                <a class="btn btn-warning" href="{% url 'country_edit' object.id %}">Country edit</a>
+                                <a class="btn btn-danger" href="{% url 'country_add' %}">Country add</a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

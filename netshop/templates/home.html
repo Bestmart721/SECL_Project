@@ -36,9 +36,39 @@
   <span class="sr-only">Next</span>
   </a>
 </div><!---End slider-->
-<div class="container text-center">
-<h1 class="btn btn-success">Home</h1>
-</div>
+
+    <br>
+
+    <div class="container-fluid text-left">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><h4>List of persons</h4></div>
+                    <div class="panel-body"><a class="btn btn-info" href="{% url 'person' %}">Person</a></div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="panel panel-warning">
+                    <div class="panel-heading"><h4>List of places</h4></div>
+                    <div class="panel-body"><a class="btn btn-warning" href="{% url 'place' %}">City</a></div>
+                    <div class="panel-body"><a class="btn btn-warning" href="{% url 'country_list' %}">Country</a></div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><h4>List of shops</h4></div>
+                    <div class="panel-body"><a class="btn btn-danger" href="{% url 'shop' %}">Shop</a></div>
+                    <div class="panel-body"><a class="btn btn-danger" href="{% url 'type' %}">Type of shop</a></div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="panel panel-warning">
+                    <div class="panel-heading"><h4>List of stocks</h4></div>
+                    <div class="panel-body"><a class="btn btn-warning" href="{% url 'stock' %}">Stock</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 <br>

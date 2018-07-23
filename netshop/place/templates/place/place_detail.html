@@ -3,15 +3,26 @@
 {% block title %}Detail city{{ city.pk }}{% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <h3>City details</h3>
-        <p>{{ place }}</p>
-        <a class="btn btn-info" href="{% url 'place' %}">&larr; Return city</a>
-        <a class="btn btn-warning" href="/place/1/edit">City edit</a>
-        <a class="btn btn-danger" href="/place/add">City add</a>
-		<br>
-		<br>
+
+
+
+    <div class="container text-left">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h3>City details</h3></div>
+                        <div class="panel-body">
+                            <div class="col-sm-4">
+                                <h4><b>{{ place }}</b></h4>
+                            </div>
+                            <div class="col-sm-4">
+                                <a class="btn btn-info" href="{% url 'place' %}">&larr; Return city</a>
+                                <a class="btn btn-warning" href="{% url 'place_edit' place.id %}">City edit</a>
+                                <a class="btn btn-danger" href="{% url 'place_add' %}">Cirt add</a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
 {% endblock %}

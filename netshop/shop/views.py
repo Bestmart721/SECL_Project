@@ -30,6 +30,28 @@ class ShopCreateView(CreateView):
     model = Shop
     fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
 
+def type(request):
+    typeof = TypeShop.objects.all()
+    context = {
+        'type': typeof
+    }
+    return render(request, 'shop/type.html', context)
+
+def type_detail(request, type_id):
+    typeof = get_object_or_404(TypeShop, pk=type_id)
+    context = {
+        'type' : typeof
+    }
+    return  render(request, 'shop/type_detail.html', context)
+
+class TypeUpdateView(UpdateView):
+    model = TypeShop
+    fields = ('name',)
+
+class TypeCreateView(CreateView):
+    model = TypeShop
+    fields = ('name',)
+
 class CustomShopCreateView(TemplateView):
     template_name = 'shop/shop_form.html'
 

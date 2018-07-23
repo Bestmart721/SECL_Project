@@ -21,6 +21,8 @@ body {
 
 }
 
+
+
 @-webkit-keyframes animate {
 	from {background-position:0 0;}
 	to {background-position: 500px 0;}
@@ -62,6 +64,10 @@ body {
 	text-decoration: none;
 	color: white;
 }
+
+/*.panel-body>a>a {*/
+	/*display: none;*/
+/*}*/
 
 /*base.html*/
 
@@ -136,15 +142,21 @@ nav ul li a:hover{
 	background-color: #0F9CA0;
 }
 
+.col-sm-4>.btn {
+    margin-bottom: 10px;
+}
+
 .btn-success {
     transition: width 2s, height 4s;
+	border: none;
+	border-radius: 30px;
 }
 
 .btn-success:hover {
 	width: 350px;
 	height: 50px;
 	background-color: #0f9de4;
-	border: none;border-radius: 5px;
+	border: none;border-radius: 30px;
 }
 
 footer div.col-sm-6 ul li a{
