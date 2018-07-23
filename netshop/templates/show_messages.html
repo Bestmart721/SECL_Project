@@ -1,0 +1,9 @@
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li class="{{ messages.tags }}">
+                <p class="btn btn-success">{{ message }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

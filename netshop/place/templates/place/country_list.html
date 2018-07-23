@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                        <div class="panel-heading"><h4>List of countries</h4></div>
+                        <div class="panel-heading"><h4>List of countries&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px" class="btn btn-danger" href="{% url 'country_add' %}">Add country</a></h4></div>
                          {% for obj in object_list %}
                         <div class="panel-body"><a class="btn btn-success" href="{% url 'country_detail' obj.id %}">{{ obj}}</a>&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px;" class="btn btn-warning" href="{% url 'country_edit' obj.id %}">Country edit</a></div>
                         {% endfor %}

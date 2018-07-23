@@ -5,19 +5,35 @@
 
         <br>
 
+
     <div class="container text-left">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-8">
                 <div class="panel panel-primary">
                     <div class="panel-heading"><h3>Country details</h3></div>
                         <div class="panel-body">
-                            <div class="col-sm-4">
-                                <h4><b>{{ object }}</b></h4>
+                            <div class="col-sm-8">
+                                <div class="table-responsive">
+                                <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th>№</th>
+                                    <th>Name</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>{{ object.pk }}</td>
+                                    <td>{{ object.name }}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </div>
                             </div>
                             <div class="col-sm-4">
-                                <a class="btn btn-info" href="{% url 'country_list' %}">&larr; Return country</a>
-                                <a class="btn btn-warning" href="{% url 'country_edit' object.id %}">Country edit</a>
-                                <a class="btn btn-danger" href="{% url 'country_add' %}">Country add</a>
+                                <div><a class="btn btn-info" href="{% url 'country_list' %}">&larr; Return country</a></div>
+                                <div><a class="btn btn-warning" href="{% url 'country_edit' object.id %}">Country edit</a></div>
+                                <div><a class="btn btn-danger" href="{% url 'country_add' %}">Country add</a></div>
                             </div>
                         </div>
                 </div>

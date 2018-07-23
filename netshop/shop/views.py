@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from shop.models import Shop, TypeShop
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_http_methods
 from django.views.generic import TemplateView, UpdateView, CreateView
 from django.core.urlresolvers import reverse_lazy
-
-
-
+from  shop.forms import ShopForm
 
 def shop(request):
     shop_list = Shop.objects.all()
@@ -16,19 +15,41 @@ def shop(request):
     }
     return render(request, 'shop/shop.html', context)
 
-@require_http_methods(['POST', 'GET'])
-def shop_detail(request, shop_id):
-    shop = get_object_or_404(Shop, pk=shop_id)
-    context = {'shop': shop}
-    return render(request, 'shop/shop_detail.html', context)
+# @require_http_methods(['POST', 'GET'])
+# def shop_detail(request, pk):
+#     shop = get_object_or_404(Shop, pk=pk)
+#     context = {'shop': shop}
+#     return render(request, 'shop/shop_detail.html', context)
 
-class ShopUpdateView(UpdateView):
-    model = Shop
-    fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
+class CustomShopDetailView(TemplateView):
+    template_name = 'shop/shop_detail.html'
 
-class ShopCreateView(CreateView):
-    model = Shop
-    fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
+    def get_context_data(self, **kwargs):
+        context = super(CustomShopDetailView, self).get_context_data(**kwargs)
+        context['object'] = get_object_or_404(Shop, pk=kwargs['pk'])
+        return context
+
+# class ShopUpdateView(UpdateView):
+#     template_name = 'shop/shop_form.html'
+#     model = Shop
+#     fields = ('name', 'seller', 'type_of_shop')
+#
+# class ShopCreateView(CreateView):
+#     template_name = 'shop/shop_form.html'
+#     model = Shop
+#     fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
+
+def shop_edit(request, pk):
+    if pk == 'new':
+        instance = None
+    else:
+        instance = get_object_or_404(Shop, pk=pk)
+    form = ShopForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        shop = form.save()
+        messages.success(request, 'OK')
+        return redirect('shop_edit', pk=shop.pk)
+    return render(request, 'shop/shop_edit.html', {'form': form})
 
 def type(request):
     typeof = TypeShop.objects.all()
@@ -37,8 +58,8 @@ def type(request):
     }
     return render(request, 'shop/type.html', context)
 
-def type_detail(request, type_id):
-    typeof = get_object_or_404(TypeShop, pk=type_id)
+def type_detail(request, pk):
+    typeof = get_object_or_404(TypeShop, pk=pk)
     context = {
         'type' : typeof
     }
@@ -52,12 +73,12 @@ class TypeCreateView(CreateView):
     model = TypeShop
     fields = ('name',)
 
-class CustomShopCreateView(TemplateView):
-    template_name = 'shop/shop_form.html'
-
-    def get_context_data(self, **kwargs):
-        fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
-        context = super(CustomShopCreateView, self).get_context_data(**kwargs)
-        context['object'] = get_object_or_404(Shop, pk=1)
-        return context
+# class CustomShopCreateView(TemplateView):
+#     template_name = 'shop/shop_form.html'
+#
+#     def get_context_data(self, **kwargs):
+#         fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
+#         context = super(CustomShopCreateView, self).get_context_data(**kwargs)
+#         context['object'] = get_object_or_404(Shop, pk=1)
+#         return context
 

@@ -11,7 +11,7 @@ class Stock(models.Model):
         verbose_name_plural = u'склады'
 
     def __unicode__(self):
-        return u'{}: расположен в {}'.format(self.name, self.city)
+        return u'Название: {}'.format(self.name)
 
     def description(self):
         return self
@@ -21,4 +21,7 @@ class Stock(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return 'shop_detail', (), {'pk': self.pk}
+        return 'stock_detail', (), {'pk': self.pk}
+
+    # def get_absolute_url(self):
+    #     return "shop/%s/" % (self.id)

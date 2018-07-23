@@ -69,6 +69,30 @@ body {
 	/*display: none;*/
 /*}*/
 
+label {
+	color: white;
+}
+
+
+
+/*input[type=text] {*/
+    /*-webkit-transition: width 0.4s ease-in-out;*/
+    /*transition: width 0.4s ease-in-out;*/
+	/*background-color: #5E5B66;*/
+	/*color: white;*/
+	/*width: auto;*/
+/*}*/
+
+/*input[type=text]:focus {*/
+    /*width: 25%;*/
+	/*border: 3px solid #555;*/
+	/*background-color: #5E5B66;*/
+
+
+input[type=submit] {
+	margin-bottom: 10px;
+}
+
 /*base.html*/
 
 .navbar {
@@ -142,7 +166,7 @@ nav ul li a:hover{
 	background-color: #0F9CA0;
 }
 
-.col-sm-4>.btn {
+.col-sm-4>div>.btn {
     margin-bottom: 10px;
 }
 

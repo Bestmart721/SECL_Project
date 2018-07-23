@@ -15,8 +15,8 @@ def stock(request):
     return render(request, 'stock/stock.html', context)
 
 @require_http_methods(['POST', 'GET'])
-def stock_detail(request, stock_id):
-    stock = get_object_or_404(Stock, pk=stock_id)
+def stock_detail(request, pk):
+    stock = get_object_or_404(Stock, pk=pk)
     context = {'stock': stock}
     return render(request, 'stock/stock_detail.html', context)
 

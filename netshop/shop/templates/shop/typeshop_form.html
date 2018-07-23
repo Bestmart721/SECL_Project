@@ -2,11 +2,14 @@
 
 
 {% block content %}
+
+    <br>
+
     <div class="container-fluid">
         <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit">
+        <input class="btn btn-info" type="submit">
         </form>
         <a class="btn btn-info" href="{% url 'type' %}">&larr; Return type</a>
     </div>

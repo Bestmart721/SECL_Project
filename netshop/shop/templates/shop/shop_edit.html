@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% include 'show_messages.html' %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <p>
+            <input class="btn btn-info" type="submit" value="Save">
+        </p>
+    </form>
+    <a class="btn btn-info" href="{% url 'shop' %}">&larr; Return type</a>
+
+{% endblock %}

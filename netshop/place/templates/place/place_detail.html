@@ -5,20 +5,36 @@
 {% block content %}
 
 
-
     <div class="container text-left">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-8">
                 <div class="panel panel-primary">
                     <div class="panel-heading"><h3>City details</h3></div>
                         <div class="panel-body">
-                            <div class="col-sm-4">
-                                <h4><b>{{ place }}</b></h4>
+                            <div class="col-sm-8">
+                                <div class="table-responsive">
+                                <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th>№</th>
+                                    <th>Name</th>
+                                    <th>Country</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>{{ place.pk }}</td>
+                                    <td>{{ place.name }}</td>
+                                    <td><a style="text-decoration: none; color: black" href="{% url 'country_list' %}">{{ place.country }}</a></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </div>
                             </div>
                             <div class="col-sm-4">
-                                <a class="btn btn-info" href="{% url 'place' %}">&larr; Return city</a>
-                                <a class="btn btn-warning" href="{% url 'place_edit' place.id %}">City edit</a>
-                                <a class="btn btn-danger" href="{% url 'place_add' %}">Cirt add</a>
+                                <div><a class="btn btn-info" href="{% url 'place' %}">&larr; Return city</a></div>
+                                <div><a class="btn btn-warning" href="{% url 'place_edit' place.id %}">City edit</a></div>
+                                <div><a class="btn btn-danger" href="{% url 'place_add' %}">City add</a></div>
                             </div>
                         </div>
                 </div>

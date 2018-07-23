@@ -11,6 +11,10 @@ class TypeShop(models.Model):
     def __unicode__(self):
         return u'тип магазина: {}'.format(self.name)
 
+    @models.permalink
+    def get_absolute_url(self):
+        return 'type_detail', (), {'pk': self.pk}
+
 class Shop(models.Model):
     type_of_shop = models.ForeignKey('TypeShop', verbose_name=u'тип магазина')
     name = models.CharField(max_length=50, verbose_name=u'назва')

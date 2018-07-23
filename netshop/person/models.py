@@ -30,3 +30,7 @@ class Person(models.Model):
 
     def description(self):
         return u'{} - пол: {}, дата рождения: {}, электронный адрес: {}'.format(self.fullname(), self.get_gender_display(), self.date_of_birth, self.email)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'person_detail', (), {'pk': self.pk}

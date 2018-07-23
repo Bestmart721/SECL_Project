@@ -6,20 +6,18 @@
 
     <br>
 
+
     <div class="container text-left">
         <div class="row">
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                    <div class="panel-heading"><h4>Stock list</h4></div>
-                    {% for s in stock %}
-                    <div class="panel-body"><a class="btn btn-success" href="{% url 'stock_detail' s.id %}">{{ s }}</a></div>
-                    {% endfor %}
+                <div class="panel-heading"><h4>Shop list&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px" class="btn btn-danger" href="{% url 'stock_add' %}">Add stock</a></h4></div>
+                {% for s in stock %}
+                    <div class="panel-body"><a class="btn btn-success" href="{% url 'stock_detail' s.id %}">{{ s }}</a>&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px;" class="btn btn-warning" href="{% url 'stock_edit' s.id %}">Stock edit</a></div>
+                {% endfor %}
                 </div>
             </div>
-
         </div>
-
     </div>
-
 
 {% endblock %}

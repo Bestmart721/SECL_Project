@@ -2,13 +2,48 @@
 
 {% block title %}Detail person {{ person.pk }}{% endblock %}
 
+
 {% block content %}
-    <div class="container-fluid">
-        <h3>Person details</h3>
-        <p>{{ person.description }}</p>
-        <a class="btn btn-info" href="{% url 'person' %}">&larr; Return List</a>
-		<br>
-		<br>
+
+    <br>
+
+    <div class="container text-left">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h3>Person details</h3></div>
+                        <div class="panel-body">
+                            <div class="col-sm-8">
+                                <div class="table-responsive">
+                                <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th>№</th>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>{{ person.pk }}</td>
+                                    <td>{{ person.first_name }}</td>
+                                    <td>{{ person.last_name }}</td>
+                                    <td>{{ person.email }}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div><a class="btn btn-info" href="{% url 'person' %}">&larr; Return place</a></div>
+                                <div><a class="btn btn-warning" href="{% url 'person_edit' person.id %}">Person edit</a></div>
+                                <div><a class="btn btn-danger" href="{% url 'person_add' %}">Person add</a></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 

@@ -10,9 +10,9 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                    <div class="panel-heading"><h4>List of persons</h4></div>
+                    <div class="panel-heading"><h4>List of persons&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px" class="btn btn-danger" href="{% url 'person_add' %}">Add person</a></h4></div>
                     {% for per in person %}
-                    <div class="panel-body"><a class="btn btn-success" href="{% url 'person_detail' per.id %}">{{ per.fullname }}</a></div>
+                    <div class="panel-body"><a class="btn btn-success" href="{% url 'person_detail' per.id %}">{{ per.fullname }}</a>&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px;" class="btn btn-warning" href="{% url 'person_edit' per.id %}">Person edit</a></div>
                     {% endfor %}
                 </div>
             </div>
