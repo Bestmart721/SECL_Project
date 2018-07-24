@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                <div class="panel-heading"><h4>Shop list&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px" class="btn btn-danger" href="/shop/new/edit">Add shop</a></h4></div>
+                <div class="panel-heading"><h4>Shop list&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px" class="btn btn-danger" href="{% url 'shop_add' %}">Add shop</a></h4></div>
                 {% for s in shop %}
                     <div class="panel-body"><a class="btn btn-success" href="{% url 'shop_detail' s.id %}">{{ s }}</a></a>&nbsp;&nbsp;&nbsp;<a style="border-radius: 25px;" class="btn btn-warning" href="{% url 'shop_edit' s.id %}">Shop edit</a></div>
                 {% endfor %}

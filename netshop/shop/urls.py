@@ -16,6 +16,7 @@ urlpatterns = [
   # url(r'^shop/(?P<pk>\d+)/edit$', ShopUpdateView.as_view(), name='shop_edit'),
   # url(r'^shop/add$', ShopCreateView.as_view(), name='shop_add'),
   url(r'^shop/(?P<pk>\d+|new)/edit$', shop_edit, name='shop_edit'),
+  url(r'^shop/new/edit$', shop_edit, name='shop_add'),
   url(r'^type/(?P<pk>\d+)/edit$', TypeUpdateView.as_view(), name='type_edit'),
   url(r'^type/add$', TypeCreateView.as_view(), name='type_add'),
   # url(r'^shop/add$', CustomShopCreateView.as_view(), name='shop_add'),

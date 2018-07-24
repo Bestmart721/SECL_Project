@@ -26,10 +26,10 @@
                                 <tbody>
                                   <tr>
                                     <td>{{ object.pk }}</td>
-                                    <td>{{ object.type_of_shop }}</td>
+                                    <td><a title="List of shop types" style="text-decoration: none; color: #1a0d00" href="{% url 'type' %}">{{ object.type_of_shop }}</a></td>
                                       <td>{{ object.name }}</td>
-                                      <td>{{ object.owner }}</td>
-                                      <td>{{ object.city }}</td>
+                                      <td><a title="List of persons" style="text-decoration: none; color: #1a0d00" href="{% url 'person' %}">{{ object.owner }}</a></td>
+                                      <td><a title="List of cities" style="text-decoration: none; color: #1a0d00" href="{% url 'place' %}">{{ object.city }}</a></td>
                                   </tr>
                                 </tbody>
                               </table>
