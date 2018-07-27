@@ -13,7 +13,8 @@ def place(request):
     return render(request, 'place/place.html', context)
 
 @require_http_methods(['POST', 'GET'])
-def place_detail(request, place_id):
-    place = get_object_or_404(City, pk=place_id)
+def place_detail(request, pk):
+    place = get_object_or_404(City, pk=pk)
     context = {'place': place}
     return render(request, 'place/place_detail.html', context)
+

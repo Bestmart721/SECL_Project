@@ -2,6 +2,8 @@
 
 {% block title %}Shop detail {{ object.pk }}{% endblock %}
 
+{% load shoptags %}
+
 {% block content %}
 
 
@@ -19,6 +21,7 @@
                                     <th>№</th>
                                     <th>Type</th>
                                     <th>Name</th>
+                                      <th>Seller</th>
                                       <th>Owner</th>
                                       <th>City</th>
                                   </tr>
@@ -28,6 +31,11 @@
                                     <td>{{ object.pk }}</td>
                                     <td><a title="List of shop types" style="text-decoration: none; color: #1a0d00" href="{% url 'type' %}">{{ object.type_of_shop }}</a></td>
                                       <td>{{ object.name }}</td>
+                                      <td>
+                                          {% for seller in object.seller.all %}
+                                          <p><a style="text-decoration: none; color: #1a0d00" title="List of persons" href="{% url 'person' %}">{{ seller|my_sort }}</a></p>
+                                            {% endfor %}
+                                      </td>
                                       <td><a title="List of persons" style="text-decoration: none; color: #1a0d00" href="{% url 'person' %}">{{ object.owner }}</a></td>
                                       <td><a title="List of cities" style="text-decoration: none; color: #1a0d00" href="{% url 'place' %}">{{ object.city }}</a></td>
                                   </tr>

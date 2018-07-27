@@ -8,7 +8,7 @@ from django.views.generic import UpdateView, CreateView, ListView, DetailView
 
 urlpatterns = [
   url(r'^place/$', views.place, name='place'),
-  url(r'^place/(?P<place_id>\d+)$', views.place_detail, name='place_detail'),
+  url(r'^place/(?P<pk>\d+)$', views.place_detail, name='place_detail'),
   url(r'^country/list$', ListView.as_view(model=Country), name='country_list'),
   url(r'^country/(?P<pk>\d+)$', DetailView.as_view(model=Country), name='country_detail'),
 

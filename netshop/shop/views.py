@@ -39,6 +39,14 @@ class CustomShopDetailView(TemplateView):
 #     model = Shop
 #     fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
 
+# def get_model_fields(model):
+#     return model._meta.fields
+#
+# for i in get_model_fields(Shop):
+#     if i == 'name':
+#         print(i)
+
+
 def shop_edit(request, pk):
     if pk == 'new':
         instance = None
@@ -74,11 +82,11 @@ class TypeCreateView(CreateView):
     fields = ('name',)
 
 # class CustomShopCreateView(TemplateView):
-#     template_name = 'shop/shop_form.html'
-#
-#     def get_context_data(self, **kwargs):
-#         fields = ('type_of_shop', 'name', 'owner', 'seller', 'stock', 'city', 'website')
-#         context = super(CustomShopCreateView, self).get_context_data(**kwargs)
-#         context['object'] = get_object_or_404(Shop, pk=1)
-#         return context
 
+
+def test(request):
+    shop = Shop.objects.all()
+    context = {
+        'shop': shop
+    }
+    return render(request, 'shop/test.html', context)

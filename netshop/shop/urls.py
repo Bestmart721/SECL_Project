@@ -20,5 +20,5 @@ urlpatterns = [
   url(r'^type/(?P<pk>\d+)/edit$', TypeUpdateView.as_view(), name='type_edit'),
   url(r'^type/add$', TypeCreateView.as_view(), name='type_add'),
   # url(r'^shop/add$', CustomShopCreateView.as_view(), name='shop_add'),
-
+  url(r'^shop/test$', views.test, name='test')
 ]
