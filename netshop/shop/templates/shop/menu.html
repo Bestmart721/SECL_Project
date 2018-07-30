@@ -1,0 +1,11 @@
+<ul>
+    {% for item in items %}
+        <li>
+        {%  if selected == forloop.counter0 %}
+        <b>{{ item }}</b>
+        {% else %}
+            {{ item }}
+        {% endif %}
+        </li>
+    {% endfor %}
+</ul>

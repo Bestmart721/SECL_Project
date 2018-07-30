@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-
+{% load shoptags %}
 {% block content %}
 
-    {% include 'show_messages.html' %}
+{% show_messages %}
+
 
     <form method="post">
         {% csrf_token %}
@@ -15,3 +16,4 @@
     <a class="btn btn-info" href="{% url 'shop' %}">&larr; Return type</a>
 
 {% endblock %}
+
