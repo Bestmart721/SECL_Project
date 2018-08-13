@@ -1,1 +1,3 @@
-print('Hello world')
+name = "Vova"
+print('Hello', name)
+
